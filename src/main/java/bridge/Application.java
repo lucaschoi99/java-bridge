@@ -89,7 +89,7 @@ public class Application {
         outputView = new OutputView();
     }
 
-    public static void greetings() {
+    private static void greetings() {
         System.out.println("다리 건너기 게임을 시작합니다.\n");
     }
 
@@ -108,6 +108,7 @@ public class Application {
     private static boolean tryAgain() {
         try {
             String cmd = inputView.readGameCommand();
+            System.out.println(cmd);
             return bg.retry(cmd);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
